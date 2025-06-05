@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8th Air Force - Mighty Eighth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f172a;
+            color: #e5e7eb;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('https://via.placeholder.com/1920x600?text=Hero+Bomber+Squadron');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .section-bg {
+            background: linear-gradient(180deg, #1e293b, #0f172a);
+        }
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #1e3a8a;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.75rem;
+            padding: 2px;
+            background: linear-gradient(45deg, #3b82f6, #dc2626);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.5);
+        }
+        nav a {
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(90deg, #dc2626, #3b82f6);
+            transition: width 0.3s ease-in-out;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .active {
+            color: #dc2626 !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-gray-900 p-4 sticky top-0 z-30 shadow-xl">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-4xl font-extrabold text-white flex items-center">
+                <img src="https://via.placeholder.com/150x50?text=8th+Air+Force+Logo" alt="8th Air Force Logo" class="h-14 mr-3">
+                8th Air Force
+            </div>
+            <div class="space-x-8 text-xl">
+                <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+                <a href="#ranks" class="nav-link text-gray-300 hover:text-white">High Ranks</a>
+                <a href="#gallery" class="nav-link text-gray-300 hover:text-white">Gallery</a>
+                <a href="#join" class="nav-link text-gray-300 hover:text-white">Join Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="p-12 rounded-2xl bg-opacity-90 bg-gray-900 shadow-2xl">
+            <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-6">The Mighty Eighth</h1>
+            <p class="text-2xl md:text-3xl text-gray-200 mb-10">Command the skies with strategic bombing missions in the 8th Air Force.</p>
+            <button onclick="scrollToSection('join')" class="btn-primary text-white px-10 py-4 rounded-full text-xl font-semibold">Join Now</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 section-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-extrabold text-center mb-12 text-white">About the 8th Air Force</h2>
+            <p class="text-xl text-center max-w-4xl mx-auto text-gray-300 leading-relaxed">
+                Join the legendary 8th Air Force, the "Mighty Eighth," where strategic bombing defines victory. Command powerful bomber squadrons to strike deep into enemy territory, crippling key targets and turning the tide of war. Operate iconic aircraft, execute daring missions, and prove your precision and courage under fire. Be part of the force that dominates the skies—join the 8th Air Force and make history.
+            </p>
+        </div>
+    </section>
+
+    <!-- High Ranks Section -->
+    <section id="ranks" class="py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-extrabold text-center mb-12 text-white">High Ranks of the 8th Air Force</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-3xl font-semibold text-white">General (O-10)</h3>
+                    <p class="text-gray-300 mt-3">The highest rank, responsible for overall command and strategic oversight of the 8th Air Force.</p>
+                </div>
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-3xl font-semibold text-white">Lieutenant General (O-9)</h3>
+                    <p class="text-gray-300 mt-3">Senior leadership, overseeing major operations and coordinating bomber squadrons.</p>
+                </div>
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-3xl font-semibold text-white">Major General (O-8)</h3>
+                    <p class="text-gray-300 mt-3">Manages key divisions and ensures mission success through tactical planning.</p>
+                </div>
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-3xl font-semibold text-white">Brigadier General (O-7)</h3>
+                    <p class="text-gray-300 mt-3">Leads specific wings or groups, executing high-stakes bombing missions.</p>
+                </div>
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-3xl font-semibold text-white">Colonel (O-6)</h3>
+                    <p class="text-gray-300 mt-3">Commands squadrons, ensuring precision and discipline in operations.</p>
+                </div>
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-3xl font-semibold text-white">Lieutenant Colonel (O-5)</h3>
+                    <p class="text-gray-300 mt-3">Assists in squadron leadership and mission execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 section-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-extrabold text-center mb-12 text-white">Mission Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300?text=Bomber+Squadron" alt="Bomber Squadron" class="w-full h-64 object-cover">
+                    <p class="text-center py-5 text-gray-300 text-lg">Bomber Squadron in Action</p>
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300?text=Iconic+Aircraft" alt="Iconic Aircraft" class="w-full h-64 object-cover">
+                    <p class="text-center py-5 text-gray-300 text-lg">Iconic Aircraft of the 8th Air Force</p>
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="https://via.placeholder.com/400x300?text=Mission+Briefing" alt="Mission Briefing" class="w-full h-64 object-cover">
+                    <p class="text-center py-5 text-gray-300 text-lg">Mission Briefing Scene</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" class="py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-extrabold mb-12 text-white">Join the Mighty Eighth</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-10 text-gray-300 leading-relaxed">
+                Ready to dominate the skies? Join the 8th Air Force on Roblox and participate in thrilling missions. Connect with us on Discord to start your journey!
+            </p>
+            <button onclick="window.location.href='https://discord.com/invite/RKAYazK'" class="btn-primary text-white px-10 py-4 rounded-full text-xl font-semibold">Join Our Discord</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400 text-base">© 2025 8th Air Force Roblox Group. All rights reserved.</p>
+            <p class="text-gray-400 text-base mt-3">Powered by <a href="https://www.roblox.com" class="text-blue-400 hover:underline">Roblox</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                // Update active link
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Set initial active link based on current section
+        window.addEventListener('scroll', () => {
+            const sections = ['home', 'about', 'ranks', 'gallery', 'join'];
+            let current = '';
+            for (const sectionId of sections) {
+                const section = document.getElementById(sectionId);
+                if (section && window.scrollY >= section.offsetTop - 100) {
+                    current = sectionId;
+                }
+            }
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
