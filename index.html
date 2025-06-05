@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8th Air Force - Mighty Eighth</title>
+    <meta name="description" content="Join the 8th Air Force, the Mighty Eighth, on Roblox. Command strategic bombing missions and dominate the skies. Connect with us on Discord!">
+    <meta property="og:title" content="8th Air Force - Mighty Eighth">
+    <meta property="og:description" content="Experience thrilling strategic bombing missions with the 8th Air Force on Roblox. Join our Discord community to start your journey!">
+    <meta property="og:image" content="https://cdn.discordapp.com/icons/1308322061495701565/5497d53c702245e0e7333a2de6474440.png?size=600">
+    <meta property="og:url" content="https://discord.gg/6m7XqNqss8">
+    <meta name="twitter:card" content="summary_large_image">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -13,18 +19,24 @@
             color: #e5e7eb;
             margin: 0;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         .hero {
-            background-image: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('https://via.placeholder.com/1920x600?text=Hero+Bomber+Squadron');
+            background-image: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url('https://via.placeholder.com/1920x600?text=Hero+Bomber+Squadron');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            height: 800px;
+            height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             animation: fadeIn 2s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .hero {
+                height: 800px;
+            }
         }
         @keyframes fadeIn {
             0% { opacity: 0; transform: scale(1.1); }
@@ -65,7 +77,7 @@
             cursor: pointer;
         }
         .btn-primary:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(220, 38, 38, 0.5);
         }
         nav a {
@@ -88,18 +100,24 @@
         .active {
             color: #dc2626 !important;
         }
+        img {
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="bg-gray-900 p-4 sticky top-0 z-30 shadow-xl">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-4xl font-extrabold text-white flex items-center">
-                <img src="https://cdn.discordapp.com/icons/1308322061495701565/5497d53c702245e0e7333a2de6474440.png?size=600" alt="8th Air Force Logo" class="h-14 mr-3">
+    <nav class="bg-gray-900 p-4 sticky top-0 z-30 shadow-xl" aria-label="Main navigation">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-4xl font-extrabold text-white flex items-center mb-4 md:mb-0">
+                <img src="https://cdn.discordapp.com/icons/1308322061495701565/5497d53c702245e0e7333a2de6474440.png?size=600" alt="8th Air Force Logo" class="h-14 mr-3" loading="lazy">
                 8th Air Force
             </div>
-            <div class="space-x-8 text-xl">
-                <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+            <div class="space-x-4 md:space-x-8 text-lg md:text-xl flex flex-col md:flex-row items-center">
+                <a href="#home" class="nav-link text-gray-300 hover:text-white" aria-current="page">Home</a>
                 <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
                 <a href="#ranks" class="nav-link text-gray-300 hover:text-white">High Ranks</a>
                 <a href="#gallery" class="nav-link text-gray-300 hover:text-white">Gallery</a>
@@ -109,51 +127,51 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="p-12 rounded-2xl bg-opacity-90 bg-gray-900 shadow-2xl">
-            <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-6">The Mighty Eighth</h1>
-            <p class="text-2xl md:text-3xl text-gray-200 mb-10">Command the skies with strategic bombing missions in the 8th Air Force.</p>
-            <button onclick="scrollToSection('join')" class="btn-primary text-white px-10 py-4 rounded-full text-xl font-semibold">Join Now</button>
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="p-8 md:p-12 rounded-2xl bg-opacity-90 bg-gray-900 shadow-2xl">
+            <h1 id="hero-title" class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6">The Mighty Eighth</h1>
+            <p class="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-10">Command the skies with strategic bombing missions in the 8th Air Force.</p>
+            <button onclick="scrollToSection('join')" class="btn-primary text-white px-8 py-3 md:px-10 md:py-4 rounded-full text-lg md:text-xl font-semibold" aria-label="Join the 8th Air Force">Join Now</button>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 section-bg">
+    <section id="about" class="py-24 section-bg" aria-labelledby="about-title">
         <div class="container mx-auto px-4">
-            <h2 class="text-5xl font-extrabold text-center mb-12 text-white">About the 8th Air Force</h2>
-            <p class="text-xl text-center max-w-4xl mx-auto text-gray-300 leading-relaxed">
+            <h2 id="about-title" class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">About the 8th Air Force</h2>
+            <p class="text-lg md:text-xl text-center max-w-4xl mx-auto text-gray-300 leading-relaxed">
                 Join the legendary 8th Air Force, the "Mighty Eighth," where strategic bombing defines victory. Command powerful bomber squadrons to strike deep into enemy territory, crippling key targets and turning the tide of war. Operate iconic aircraft, execute daring missions, and prove your precision and courage under fire. Be part of the force that dominates the skies—join the 8th Air Force and make history.
             </p>
         </div>
     </section>
 
     <!-- High Ranks Section -->
-    <section id="ranks" class="py-24">
+    <section id="ranks" class="py-24" aria-labelledby="ranks-title">
         <div class="container mx-auto px-4">
-            <h2 class="text-5xl font-extrabold text-center mb-12 text-white">High Ranks of the 8th Air Force</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="card p-8 rounded-xl">
-                    <h3 class="text-3xl font-semibold text-white">General (O-10)</h3>
+            <h2 id="ranks-title" class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">High Ranks of the 8th Air Force</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <div class="card p-6 md:p-8 rounded-xl">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white">General (O-10)</h3>
                     <p class="text-gray-300 mt-3">The highest rank, responsible for overall command and strategic oversight of the 8th Air Force.</p>
                 </div>
-                <div class="card p-8 rounded-xl">
-                    <h3 class="text-3xl font-semibold text-white">Lieutenant General (O-9)</h3>
+                <div class="card p-6 md:p-8 rounded-xl">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white">Lieutenant General (O-9)</h3>
                     <p class="text-gray-300 mt-3">Senior leadership, overseeing major operations and coordinating bomber squadrons.</p>
                 </div>
-                <div class="card p-8 rounded-xl">
-                    <h3 class="text-3xl font-semibold text-white">Major General (O-8)</h3>
+                <div class="card p-6 md:p-8 rounded-xl">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white">Major General (O-8)</h3>
                     <p class="text-gray-300 mt-3">Manages key divisions and ensures mission success through tactical planning.</p>
                 </div>
-                <div class="card p-8 rounded-xl">
-                    <h3 class="text-3xl font-semibold text-white">Brigadier General (O-7)</h3>
+                <div class="card p-6 md:p-8 rounded-xl">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white">Brigadier General (O-7)</h3>
                     <p class="text-gray-300 mt-3">Leads specific wings or groups, executing high-stakes bombing missions.</p>
                 </div>
-                <div class="card p-8 rounded-xl">
-                    <h3 class="text-3xl font-semibold text-white">Colonel (O-6)</h3>
+                <div class="card p-6 md:p-8 rounded-xl">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white">Colonel (O-6)</h3>
                     <p class="text-gray-300 mt-3">Commands squadrons, ensuring precision and discipline in operations.</p>
                 </div>
-                <div class="card p-8 rounded-xl">
-                    <h3 class="text-3xl font-semibold text-white">Lieutenant Colonel (O-5)</h3>
+                <div class="card p-6 md:p-8 rounded-xl">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white">Lieutenant Colonel (O-5)</h3>
                     <p class="text-gray-300 mt-3">Assists in squadron leadership and mission execution.</p>
                 </div>
             </div>
@@ -161,20 +179,20 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-24 section-bg">
+    <section id="gallery" class="py-24 section-bg" aria-labelledby="gallery-title">
         <div class="container mx-auto px-4">
-            <h2 class="text-5xl font-extrabold text-center mb-12 text-white">Mission Gallery</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <h2 id="gallery-title" class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">Mission Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                 <div class="card rounded-xl overflow-hidden">
-                    <img src="https://cdn.discordapp.com/banners/1308322061495701565/7cbc7b635eb5eaf13dc0149e646f013e.webp?size=1024" alt="Bomber Squadron" class="w-full h-64 object-cover">
+                    <img src="https://cdn.discordapp.com/banners/1308322061495701565/7cbc7b635eb5eaf13dc0149e646f013e.webp?size=1024" alt="Bomber Squadron in action during a mission" class="w-full h-64 object-cover" loading="lazy">
                     <p class="text-center py-5 text-gray-300 text-lg">Bomber Event in Action</p>
                 </div>
                 <div class="card rounded-xl overflow-hidden">
-                    <img src="https://via.placeholder.com/400x300?text=Iconic+Aircraft" alt="Iconic Aircraft" class="w-full h-64 object-cover">
+                    <img src="https://via.placeholder.com/400x300?text=Iconic+Aircraft" alt="Iconic aircraft of the 8th Air Force" class="w-full h-64 object-cover" loading="lazy">
                     <p class="text-center py-5 text-gray-300 text-lg">Iconic Aircraft of the 8th Air Force</p>
                 </div>
                 <div class="card rounded-xl overflow-hidden">
-                    <img src="https://via.placeholder.com/400x300?text=Mission+Briefing" alt="Mission Briefing" class="w-full h-64 object-cover">
+                    <img src="https://via.placeholder.com/400x300?text=Mission+Briefing" alt="Mission briefing scene for the 8th Air Force" class="w-full h-64 object-cover" loading="lazy">
                     <p class="text-center py-5 text-gray-300 text-lg">Mission Briefing Scene</p>
                 </div>
             </div>
@@ -182,21 +200,21 @@
     </section>
 
     <!-- Join Section -->
-    <section id="join" class="py-24">
+    <section id="join" class="py-24" aria-labelledby="join-title">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-5xl font-extrabold mb-12 text-white">Join the Mighty Eighth</h2>
-            <p class="text-xl max-w-3xl mx-auto mb-10 text-gray-300 leading-relaxed">
+            <h2 id="join-title" class="text-4xl md:text-5xl font-extrabold mb-12 text-white">Join the Mighty Eighth</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 text-gray-300 leading-relaxed">
                 Ready to dominate the skies? Join the 8th Air Force on Roblox and participate in thrilling missions. Connect with us on Discord to start your journey!
             </p>
-            <button onclick="window.location.href='https://discord.gg/6m7XqNqss8'" class="btn-primary text-white px-10 py-4 rounded-full text-xl font-semibold">Join Our Discord</button>
+            <a href="https://discord.gg/6m7XqNqss8" class="btn-primary text-white px-8 py-3 md:px-10 md:py-4 rounded-full text-lg md:text-xl font-semibold inline-block" aria-label="Join our Discord community">Join Our Discord</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-10">
+    <footer class="bg-gray-900 py-10" aria-label="Footer">
         <div class="container mx-auto px-4 text-center">
             <p class="text-gray-400 text-base">© 2025 8th Air Force Roblox Group. All rights reserved.</p>
-            <p class="text-gray-400 text-base mt-3">Powered by <a href="https://www.roblox.com" class="text-blue-400 hover:underline">Roblox</a></p>
+            <p class="text-gray-400 text-base mt-3">Powered by <a href="https://www.roblox.com" class="text-blue-400 hover:underline" aria-label="Visit Roblox website">Roblox</a></p>
         </div>
     </footer>
 
@@ -237,6 +255,9 @@
                 }
             });
         });
+
+        // Ensure Discord link opens in a new tab
+        document.querySelector('a[href="https://discord.gg/6m7XqNqss8"]').setAttribute('target', '_blank');
     </script>
 </body>
 </html>
