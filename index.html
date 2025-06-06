@@ -7,7 +7,7 @@
     <meta name="description" content="Join the 8th Air Force, the Mighty Eighth, on Roblox. Command strategic bombing missions and dominate the skies. Connect with us on Discord!">
     <meta property="og:title" content="8th Air Force - Mighty Eighth">
     <meta property="og:description" content="Experience thrilling strategic bombing missions with the 8th Air Force on Roblox. Join our Discord community to start your journey!">
-    <meta property="og:image" content="https://cdn.discordapp.com/icons/1308322061495701565/5497d53c702245e0e7333a2de6474440.png ministerial/600">
+    <meta property="og:image" content="https://cdn.discordapp.com/icons/1308322061495701565/5497d53c702245e0e7333a2de6474440.png?size=600">
     <meta property="og:url" content="https://discord.gg/6m7XqNqss8">
     <meta name="twitter:card" content="summary_large_image">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -102,6 +102,7 @@
         }
         img, video {
             transition: transform 0.3s ease-in-out;
+            cursor: pointer;
         }
         img:hover, video:hover {
             transform: scale(1.05);
@@ -144,6 +145,38 @@
         .rank-table .header-100th {
             background-color: #f97316;
             color: #fff;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+        }
+        .modal-close:hover {
+            color: #dc2626;
         }
     </style>
 </head>
@@ -321,7 +354,7 @@
             <h2 id="gallery-title" class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">Mission Gallery</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                 <div class="card rounded-xl overflow-hidden">
-                    <img src="https://cdn.discordapp.com/banners/1308322061495701565/7cbc7b635eb5eaf13dc0149e646f013e.webp?size=1024" alt="Bomber Squadron in action during a mission" class="w-full h-64 object-cover" loading="lazy">
+                    <img src="https://cdn.discordapp.com/banners/1308322061495701565/7cbc7b635eb5eaf13dc0149e646f013e.webp?size=1024" alt="Bomber Squadron in action during a mission" class="w-full h-64 object-cover gallery-image" loading="lazy">
                     <p class="text-center py-5 text-gray-300 text-lg">Mission Briefing Scene</p>
                 </div>
                 <div class="card rounded-xl overflow-hidden">
@@ -332,8 +365,20 @@
                     <p class="text-center py-5 text-gray-300 text-lg">8th Air Force Propaganda Video</p>
                 </div>
                 <div class="card rounded-xl overflow-hidden">
-                    <img src="https://cdn.discordapp.com/attachments/1378609402981908591/1380325889774190732/Screenshot_2025-05-26_213933.png?ex=68437829&is=684226a9&hm=3666c5640b504c69a243aa7b850af48b8db519e1effa2e61c0328280d9520397&" alt="Mission briefing scene for the 8th Air Force" class="w-full h-64 object-cover" loading="lazy">
+                    <img src="https://cdn.discordapp.com/attachments/1378609402981908591/1380325889774190732/Screenshot_2025-05-26_213933.png?ex=68437829&is=684226a9&hm=3666c5640b504c69a243aa7b850af48b8db519e1effa2e61c0328280d9520397&" alt="Mission briefing scene for the 8th Air Force" class="w-full h-64 object-cover gallery-image" loading="lazy">
                     <p class="text-center py-5 text-gray-300 text-lg">Bomber Event in Action</p>
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="https://cdn.discordapp.com/attachments/1378609402981908591/1380345462640349345/4844972422_82625029340125_1741993641728.png?ex=68438a63&is=684238e3&hm=4639421f2375eef14fd38adc6cc9a7a78c75ee6500521b53f684a9f73457162f&" alt="Bomber Squadron in action during a mission" class="w-full h-64 object-cover gallery-image" loading="lazy">
+                    <p class="text-center py-5 text-gray-300 text-lg">Mission Briefing Scene</p>
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="https://cdn.discordapp.com/attachments/1378609402981908591/1380345755822198875/4844972422_82625029340125_1741734888842.png?ex=68438aa9&is=68423929&hm=c6128a9293c3d0a1efe048191a03f1d1c5599267cba73b8f3409e01244aa7125&" alt="Bomber Squadron in action during a mission" class="w-full h-64 object-cover gallery-image" loading="lazy">
+                    <p class="text-center py-5 text-gray-300 text-lg">Active Combat Flight Training</p>
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="https://cdn.discordapp.com/attachments/1378609402981908591/1380345895911952516/Screenshot_2025-05-26_212724.png?ex=68438acb&is=6842394b&hm=0fc0ed53c7028873f09715598c16d354ef7981e96cb90fe18d25eec121cd3868&" alt="Bomber Squadron in action during a mission" class="w-full h-64 object-cover gallery-image" loading="lazy">
+                    <p class="text-center py-5 text-gray-300 text-lg">Flight Training rally</p>
                 </div>
             </div>
         </div>
@@ -349,6 +394,12 @@
             <a href="https://discord.gg/6m7XqNqss8" class="btn-primary text-white px-8 py-3 md:px-10 md:py-4 rounded-full text-lg md:text-xl font-semibold inline-block" aria-label="Join our Discord community">Join Our Discord</a>
         </div>
     </section>
+
+    <!-- Modal for Image Expansion -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 py-10" aria-label="Footer">
@@ -398,6 +449,37 @@
 
         // Ensure Discord link opens in a new tab
         document.querySelector('a[href="https://discord.gg/6m7XqNqss8"]').setAttribute('target', '_blank');
+
+        // Modal functionality for image expansion
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.modal-close');
+        const galleryImages = document.querySelectorAll('.gallery-image');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
